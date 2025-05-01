@@ -1,6 +1,7 @@
 const toggleSwitch = document.getElementById('toggleSwitch');
 const loginForm = document.getElementById('loginForm');
 const signupForm = document.getElementById('signupForm');
+const formInner = document.querySelector('.form-inner');
 
 toggleSwitch.addEventListener('change', () => {
   if (toggleSwitch.checked) {
@@ -10,4 +11,5 @@ toggleSwitch.addEventListener('change', () => {
     signupForm.classList.remove('active');
     loginForm.classList.add('active');
   }
+  formInner.classList.toggle('flipped');
 });

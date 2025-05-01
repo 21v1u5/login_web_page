@@ -28,23 +28,51 @@
     align-items: center;
   }
   
-  .form-box {
-    background-color: #1e1e1e;
-    border: 2px solid yellow;
-    border-radius: 8px;
-    padding: 30px;
-    width: 400px;
-  }
-  
-  .form {
-    display: none;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .form.active {
-    display: flex;
-  }
+.form-box {
+  background-color: transparent;
+  border: none;
+  padding: 30px;
+  width: 400px;
+  height: 500px;
+  perspective: 1000px;
+  position: relative;
+}
+
+.form-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.form {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #1e1e1e;
+  border: 2px solid yellow;
+  border-radius: 8px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  backface-visibility: hidden;
+  gap: 15px;
+}
+
+.front {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.flipped {
+  transform: rotateY(180deg);
+}
   
   .input-box input {
     padding: 10px;
