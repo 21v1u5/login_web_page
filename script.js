@@ -1,21 +1,13 @@
-const loginToggle = document.getElementById('loginToggle');
-const singupToggle = document.getElementById('singupToggle');
+const toggleSwitch = document.getElementById('toggleSwitch');
 const loginForm = document.getElementById('loginForm');
-const singupForm = document.getElementById('singupForm');
-const slider = document.querySelector('.toggle .slider');
+const signupForm = document.getElementById('signupForm');
 
-loginToggle.addEventListener('click', () => {
-    loginToggle.classList.add('active');
-    singupToggle.classList.remove('active');
-    loginForm.classList.add('active');
-    singupForm.classList.remove('active');
-    slider.style.transform = 'translatex(0)';
-});
-
-singupToggle.addEventListener('click', () => {
-    singupToggle.classList.add('active');
-    loginToggle.classList.remove('active');
-    singupForm.classList.add('active');
+toggleSwitch.addEventListener('change', () => {
+  if (toggleSwitch.checked) {
     loginForm.classList.remove('active');
-    slider.style.transform = 'translatex(100%)';
-})
+    signupForm.classList.add('active');
+  } else {
+    signupForm.classList.remove('active');
+    loginForm.classList.add('active');
+  }
+});
