@@ -11,3 +11,11 @@ loginToggle.addEventListener('click', () => {
     singupForm.classList.remove('active');
     slider.style.transform = 'translatex(0)';
 });
+
+singupToggle.addEventListener('click', () => {
+    singupToggle.classList.add('active');
+    loginToggle.classList.remove('active');
+    singupForm.classList.add('active');
+    loginForm.classList.remove('active');
+    slider.style.transform = 'translatex(100%)';
+})
